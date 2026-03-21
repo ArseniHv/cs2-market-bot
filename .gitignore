@@ -1,0 +1,38 @@
+.venv/
+
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data files
+data/cache/
+data/alerts/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+influxdb-data/
+
+# Prophet/Stan cache
+/tmp/

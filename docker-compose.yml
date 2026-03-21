@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: cs2_influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+      - influxdb-config:/etc/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword123
+      - DOCKER_INFLUXDB_INIT_ORG=cs2bot
+      - DOCKER_INFLUXDB_INIT_BUCKET=cs2_market
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-token-change-this
+    restart: unless-stopped
+
+volumes:
+  influxdb-data:
+  influxdb-config:

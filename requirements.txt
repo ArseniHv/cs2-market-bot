@@ -1,0 +1,27 @@
+# Database
+influxdb-client==1.44.0
+
+# HTTP
+httpx==0.27.0
+
+# Scheduling
+APScheduler==3.10.4
+
+# Analytics
+pandas==2.2.3
+numpy==2.2.0
+
+# ML
+prophet==1.1.5
+
+# Telegram bot
+python-telegram-bot==21.3
+
+# Charts
+matplotlib==3.9.2
+
+# Config
+python-dotenv==1.0.1
+
+# Utilities
+pytz==2024.1
