@@ -2,7 +2,7 @@
 Run this script to verify the InfluxDB connection is working.
 Writes a dummy data point, reads it back, and confirms the round-trip.
 
-Usage:
+Usage :
     python tests/test_influx_connection.py
 """
 
