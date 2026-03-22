@@ -2,9 +2,9 @@
 CS2 Market Analytics Bot — main entry point.
 
 Usage:
-    python main.py             # Start the collector scheduler
-    python main.py --seed      # Seed historical data then start scheduler
-    python main.py --collect   # Run one collection cycle and exit
+    python main.py             # Start the bot + collector scheduler
+    python main.py --seed      # Seed historical data then start bot
+    python main.py --collect   # Run one collection cycle and exit (no bot)
 """
 
 import argparse
@@ -25,33 +25,30 @@ def main():
     parser.add_argument(
         "--seed",
         action="store_true",
-        help="Seed InfluxDB with historical price data from Steam Market before starting.",
+        help="Seed InfluxDB with historical price data before starting the bot.",
     )
     parser.add_argument(
         "--collect",
         action="store_true",
-        help="Run a single collection cycle and exit.",
+        help="Run a single collection cycle and exit (no bot started).",
     )
     args = parser.parse_args()
 
-    from src.collector.collector import Collector
-    collector = Collector()
-
-    if args.seed:
-        logger.info("Running historical data seed...")
-        collector.seed_historical_data()
-        logger.info("Seed complete. Starting scheduler...")
-        collector.start_scheduler()
-
-    elif args.collect:
+    if args.collect:
+        from src.collector.collector import Collector
         logger.info("Running single collection cycle...")
-        result = collector.run_collection_cycle()
+        result = Collector().run_collection_cycle()
         logger.info(f"Done: {result}")
         sys.exit(0)
 
-    else:
-        logger.info("Starting collection scheduler...")
-        collector.start_scheduler()
+    if args.seed:
+        from src.collector.collector import Collector
+        logger.info("Seeding historical data...")
+        Collector().seed_historical_data()
+        logger.info("Seed complete. Starting bot...")
+
+    from src.bot.bot import start_bot
+    start_bot()
 
 
 if __name__ == "__main__":
