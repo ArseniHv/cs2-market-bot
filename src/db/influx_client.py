@@ -85,6 +85,55 @@ class InfluxClientWrapper:
 
         self._write_api.write(bucket=INFLUXDB_BUCKET, record=point)
 
+    def write_float_range_price(
+        self,
+        item_name: str,
+        float_range: str,
+        avg_price: float,
+        min_price: float,
+        max_price: float,
+        avg_float: float,
+        listing_count: int,
+    ) -> None:
+        """Write float-range price data point to item_metadata measurement."""
+        from datetime import datetime, timezone
+        point = (
+            Point("item_metadata")
+            .tag("item_name", item_name)
+            .tag("float_range", float_range)
+            .field("avg_price", float(avg_price))
+            .field("min_price", float(min_price))
+            .field("max_price", float(max_price))
+            .field("avg_float", float(avg_float))
+            .field("listing_count", int(listing_count))
+            .time(datetime.now(timezone.utc), "s")
+        )
+        self._write_api.write(bucket=INFLUXDB_BUCKET, record=point)
+
+    def get_float_range_historical_avgs(
+        self, item_name: str
+    ) -> dict:
+        """
+        Fetch historical average prices per float range for an item.
+        Returns dict keyed by float range abbreviation.
+        """
+        flux = f"""
+from(bucket: "{INFLUXDB_BUCKET}")
+  |> range(start: -30d)
+  |> filter(fn: (r) => r._measurement == "item_metadata")
+  |> filter(fn: (r) => r.item_name == "{item_name}")
+  |> filter(fn: (r) => r._field == "avg_price")
+  |> group(columns: ["float_range"])
+  |> mean()
+"""
+        records = self.query(flux)
+        result = {}
+        for record in records:
+            tier = record.values.get("float_range")
+            if tier:
+                result[tier] = round(float(record.get_value()), 2)
+        return result
+
     # ------------------------------------------------------------------
     # Query helpers
     # ------------------------------------------------------------------

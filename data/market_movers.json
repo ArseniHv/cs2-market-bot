@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "market_hash_name": "\u2605 StatTrak\u2122 Gut Knife | Doppler (Factory New)",
+    "prev_price": 428.98,
+    "curr_price": 813.17,
+    "pct_change": 89.56,
+    "volume": 0
+  },
+  {
+    "market_hash_name": "\u2605 StatTrak\u2122 Falchion Knife | Doppler (Factory New)",
+    "prev_price": 671.94,
+    "curr_price": 1102.04,
+    "pct_change": 64.01,
+    "volume": 0
+  },
+  {
+    "market_hash_name": "Souvenir M4A1-S | Mud-Spec (Factory New)",
+    "prev_price": 80.28,
+    "curr_price": 45.99,
+    "pct_change": -42.71,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Dual Berettas | Angel Eyes (Factory New)",
+    "prev_price": 35.05,
+    "curr_price": 21.51,
+    "pct_change": -38.63,
+    "volume": 6
+  },
+  {
+    "market_hash_name": "AK-47 | Crane Flight (Factory New)",
+    "prev_price": 454.92,
+    "curr_price": 344.3,
+    "pct_change": -24.32,
+    "volume": 4
+  },
+  {
+    "market_hash_name": "Souvenir MAC-10 | Urban DDPAT (Factory New)",
+    "prev_price": 14.75,
+    "curr_price": 11.3,
+    "pct_change": -23.39,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "PP-Bizon | RMX (Minimal Wear)",
+    "prev_price": 1.95,
+    "curr_price": 1.5,
+    "pct_change": -23.08,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "Sticker | Staehr (Holo) | Budapest 2025",
+    "prev_price": 0.53,
+    "curr_price": 0.41,
+    "pct_change": -22.64,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "Sticker | MIBR (Holo) | Austin 2025",
+    "prev_price": 8.9,
+    "curr_price": 7.01,
+    "pct_change": -21.24,
+    "volume": 5
+  },
+  {
+    "market_hash_name": "AK-47 | Case Hardened (Well-Worn)",
+    "prev_price": 208.94,
+    "curr_price": 241.76,
+    "pct_change": 15.71,
+    "volume": 10
+  },
+  {
+    "market_hash_name": "StatTrak\u2122 M4A1-S | Electrum (Minimal Wear)",
+    "prev_price": 31.15,
+    "curr_price": 36.01,
+    "pct_change": 15.6,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Sticker | Fluxo (Gold) | Austin 2025",
+    "prev_price": 1.62,
+    "curr_price": 1.38,
+    "pct_change": -14.81,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "StatTrak\u2122 CZ75-Auto | Red Astor (Factory New)",
+    "prev_price": 9.94,
+    "curr_price": 8.59,
+    "pct_change": -13.58,
+    "volume": 3
+  },
+  {
+    "market_hash_name": "M4A4 | The Battlestar (Factory New)",
+    "prev_price": 245.35,
+    "curr_price": 271.64,
+    "pct_change": 10.72,
+    "volume": 4
+  },
+  {
+    "market_hash_name": "P2000 | Space Race (Factory New)",
+    "prev_price": 59.08,
+    "curr_price": 63.1,
+    "pct_change": 6.8,
+    "volume": 12
+  },
+  {
+    "market_hash_name": "R8 Revolver | Tango (Factory New)",
+    "prev_price": 2.86,
+    "curr_price": 2.69,
+    "pct_change": -5.94,
+    "volume": 4
+  },
+  {
+    "market_hash_name": "M4A4 | \u9f8d\u738b (Dragon King) (Factory New)",
+    "prev_price": 113.77,
+    "curr_price": 120.52,
+    "pct_change": 5.93,
+    "volume": 5
+  },
+  {
+    "market_hash_name": "\u2605 Classic Knife | Urban Masked (Field-Tested)",
+    "prev_price": 118.79,
+    "curr_price": 112.16,
+    "pct_change": -5.58,
+    "volume": 2
+  }
+]

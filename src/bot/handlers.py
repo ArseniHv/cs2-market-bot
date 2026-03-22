@@ -273,8 +273,43 @@ class BotHandlers:
     async def float_command(
         self, update: Update, context: ContextTypes.DEFAULT_TYPE
     ) -> None:
-        """Placeholder — implemented in Part 5."""
-        await self._send(
-            update,
-            "⏳ /float is coming in a future update\\."
-        )
+        item_name = self._parse_item_name(context.args)
+        if not item_name:
+            await self._send(update, "Usage: /float ITEM\\_NAME")
+            return
+
+        await update.message.reply_text("Fetching CSFloat listings…")
+
+        from src.csfloat.csfloat_client import CSFloatClient
+        from src.csfloat.formatters import format_float_message
+
+        try:
+            client = CSFloatClient()
+        except ValueError as e:
+            await self._send(update, f"❌ CSFloat not configured: {escape_md(str(e))}")
+            return
+
+        listings = client.fetch_listings(item_name)
+        grouped = client.group_by_float_range(listings)
+
+        # Store float-range data in InfluxDB for trend tracking
+        for tier, data in grouped.items():
+            try:
+                self.db.write_float_range_price(
+                    item_name=item_name,
+                    float_range=tier,
+                    avg_price=data["avg_price"],
+                    min_price=data["min_price"],
+                    max_price=data["max_price"],
+                    avg_float=data["avg_float"],
+                    listing_count=data["count"],
+                )
+            except Exception as e:
+                logger.warning(f"Could not write float data to InfluxDB: {e}")
+
+        # Get historical averages for best-value comparison
+        historical_avgs = self.db.get_float_range_historical_avgs(item_name)
+        best_tier = client.find_best_value_range(grouped, historical_avgs)
+
+        msg = format_float_message(item_name, grouped, best_tier)
+        await self._send(update, msg)
