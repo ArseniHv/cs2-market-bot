@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "category": "rifle",
+      "float_range": "ft"
+    },
+    {
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "category": "rifle",
+      "float_range": "ft"
+    },
+    {
+      "market_hash_name": "M4A4 | Howl (Field-Tested)",
+      "category": "rifle",
+      "float_range": "ft"
+    },
+    {
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "category": "pistol",
+      "float_range": "fn"
+    },
+    {
+      "market_hash_name": "Sport Gloves | Pandora's Box (Field-Tested)",
+      "category": "gloves",
+      "float_range": "ft"
+    },
+    {
+      "market_hash_name": "Karambit | Doppler (Factory New)",
+      "category": "knife",
+      "float_range": "fn"
+    },
+    {
+      "market_hash_name": "Dreams & Nightmares Case",
+      "category": "case",
+      "float_range": "none"
+    }
+  ]
+}
