@@ -1,5 +1,8 @@
 # CS2 Market Analytics Bot
 
+![CI](https://github.com/ArseniHv/cs2-market-bot/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+
 A continuously running data pipeline and Telegram bot that tracks CS2 skin
 prices, detects market anomalies, and delivers tiered alerts and ML-based
 price predictions.
@@ -29,7 +32,7 @@ CSFloat API (float breakdowns)                              ↓
 - Deep per-item analytics for tracked items stored in InfluxDB
 - Market-wide spike detection via cycle-to-cycle comparison
 - Tiered push alerts: 🟡 mild → 🟠 significant → 🚨 SUPERFLAG
-- 7-day ML price prediction using Facebook Prophet
+- 7-day ML price prediction using Facebook Prophet (Linux) or Holt exponential smoothing (Windows)
 - Float-range price breakdown via CSFloat API
 - Category-level analytics aggregation
 - `/discover` command showing top movers across all CS2 items
@@ -43,10 +46,10 @@ CSFloat API (float breakdowns)                              ↓
 | Scheduling | APScheduler |
 | HTTP client | httpx |
 | Analytics | Pandas, NumPy |
-| ML prediction | Facebook Prophet |
+| ML prediction | Facebook Prophet (Linux) / Holt smoothing (Windows) |
 | Bot interface | python-telegram-bot v21 |
 | Containerisation | Docker, Docker Compose |
-| Deployment | Oracle Cloud free tier VM (Ubuntu 22.04) |
+| Deployment | Google Cloud free tier VM (Ubuntu 22.04) / local |
 
 ## Data Sources
 
@@ -99,19 +102,27 @@ rolling average. Deviation = `(7d_avg - 30d_avg) / 30d_avg * 100`.
 **Trend Direction:** Linear regression slope on last 14 price points.
 Classified as strong uptrend / uptrend / sideways / downtrend / strong downtrend.
 
+**ML Prediction:** Facebook Prophet on Linux (weekly + yearly seasonality,
+changepoint detection). Falls back to Holt double exponential smoothing on
+Windows where Prophet compilation is not supported.
+
 ## Local Development
 ```bash
 # Clone and set up
-git clone https://github.com/YOUR_USERNAME/cs2-market-bot.git
+git clone https://github.com/ArseniHv/cs2-market-bot.git
 cd cs2-market-bot
+
+# Create and activate virtual environment
 python -m venv .venv
 source .venv/Scripts/activate  # Windows bash
+# or: .venv\Scripts\activate.bat  # Windows CMD
+
 pip install -r requirements.txt
 
 # Start InfluxDB
 docker compose up influxdb -d
 
-# Configure
+# Configure environment
 cp .env.example .env
 # Edit .env with your tokens
 
@@ -120,25 +131,57 @@ python tests/test_influx_connection.py
 python tests/test_analytics.py
 python tests/test_csfloat.py
 
-# Single collection cycle
+# Single collection cycle (no bot)
 python main.py --collect
 
-# Start bot
+# Seed historical data for tracked items
+python main.py --seed
+
+# Start bot + scheduler
 python main.py
 ```
 
-## Deployment (Oracle Cloud)
+> **Note on ML prediction:** Prophet requires Linux for compilation-free
+> installation. On Windows the bot automatically uses Holt double exponential
+> smoothing instead. Prophet is used automatically when deployed on Linux.
 
-See deployment steps in the repository wiki or follow Part 7 of the
-build guide. Summary:
+## Deployment (Google Cloud)
+
+Google Cloud's Always Free tier includes one e2-micro VM that runs permanently
+at no cost.
 ```bash
-git clone https://github.com/YOUR_USERNAME/cs2-market-bot.git
+# On the VM after SSH
+git clone https://github.com/ArseniHv/cs2-market-bot.git
 cd cs2-market-bot
-cp .env.example .env && nano .env
-docker compose up influxdb -d && sleep 20
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Configure
+cp .env.example .env
+nano .env  # fill in all values
+
+# Start InfluxDB
+docker compose up influxdb -d
+sleep 20
+
+# Build and start bot (10-15 min first build — Prophet compiles here)
 docker compose build bot
 docker compose up -d
+
+# Seed historical data
 docker compose exec bot python main.py --seed
+
+# Watch logs
+docker compose logs -f bot
+```
+
+Enable auto-restart on VM reboot:
+```bash
+sudo systemctl enable cs2-market-bot
 ```
 
 ## Environment Variables
@@ -154,3 +197,7 @@ docker compose exec bot python main.py --seed
 | `CSFLOAT_API_KEY` | CSFloat API key |
 | `COLLECTION_INTERVAL_MINUTES` | Price collection interval (default: 30) |
 | `STEAM_REQUEST_DELAY_SECONDS` | Delay between Steam requests (default: 3) |
+
+## License
+
+MIT
