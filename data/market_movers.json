@@ -1,142 +1,142 @@
 [
   {
-    "market_hash_name": "Charm | Lil' Bloody",
-    "prev_price": 1.43,
-    "curr_price": 4.18,
-    "pct_change": 192.31,
-    "volume": 28
+    "market_hash_name": "Souvenir MP7 | Orange Peel (Well-Worn)",
+    "prev_price": 1.85,
+    "curr_price": 233.86,
+    "pct_change": 12541.08,
+    "volume": 1
   },
   {
-    "market_hash_name": "\u2605 Stiletto Knife | Doppler (Minimal Wear)",
-    "prev_price": 1050.33,
-    "curr_price": 3028.72,
-    "pct_change": 188.36,
-    "volume": 0
-  },
-  {
-    "market_hash_name": "Galil AR | Kami (Factory New)",
-    "prev_price": 29.15,
-    "curr_price": 14.42,
-    "pct_change": -50.53,
-    "volume": 13
-  },
-  {
-    "market_hash_name": "Charm | Dead Weight",
-    "prev_price": 0.55,
-    "curr_price": 0.74,
-    "pct_change": 34.55,
-    "volume": 116
-  },
-  {
-    "market_hash_name": "Desert Eagle | The Daily Deagle (Field-Tested)",
-    "prev_price": 2.61,
-    "curr_price": 1.89,
-    "pct_change": -27.59,
-    "volume": 28
-  },
-  {
-    "market_hash_name": "Sticker | Winstrike Team | London 2018",
-    "prev_price": 2.03,
-    "curr_price": 1.54,
-    "pct_change": -24.14,
-    "volume": 4
-  },
-  {
-    "market_hash_name": "\u2605 StatTrak\u2122 Bayonet | Damascus Steel (Minimal Wear)",
-    "prev_price": 408.92,
-    "curr_price": 316.68,
-    "pct_change": -22.56,
+    "market_hash_name": "Souvenir Desert Eagle | Urban DDPAT (Well-Worn)",
+    "prev_price": 0.91,
+    "curr_price": 26.77,
+    "pct_change": 2841.76,
     "volume": 2
   },
   {
-    "market_hash_name": "G3SG1 | Polar Camo (Minimal Wear)",
-    "prev_price": 0.05,
-    "curr_price": 0.04,
-    "pct_change": -20.0,
-    "volume": 11
-  },
-  {
-    "market_hash_name": "Dual Berettas | Cobalt Quartz (Factory New)",
-    "prev_price": 0.83,
-    "curr_price": 0.98,
-    "pct_change": 18.07,
-    "volume": 60
-  },
-  {
-    "market_hash_name": "P2000 | Ivory (Minimal Wear)",
-    "prev_price": 0.89,
-    "curr_price": 1.05,
-    "pct_change": 17.98,
-    "volume": 6
-  },
-  {
-    "market_hash_name": "Sticker | Gambit Esports (Foil) | Boston 2018",
-    "prev_price": 21.67,
-    "curr_price": 18.42,
-    "pct_change": -15.0,
+    "market_hash_name": "Souvenir Dual Berettas | Drift Wood (Well-Worn)",
+    "prev_price": 0.06,
+    "curr_price": 1.08,
+    "pct_change": 1700.0,
     "volume": 1
   },
   {
-    "market_hash_name": "P250 | Red Rock (Battle-Scarred)",
-    "prev_price": 25.69,
-    "curr_price": 21.84,
-    "pct_change": -14.99,
+    "market_hash_name": "XM1014 | Blue Tire (Factory New)",
+    "prev_price": 2.91,
+    "curr_price": 30.69,
+    "pct_change": 954.64,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Souvenir Galil AR | Hunting Blind (Well-Worn)",
+    "prev_price": 2.31,
+    "curr_price": 23.39,
+    "pct_change": 912.55,
     "volume": 1
   },
   {
-    "market_hash_name": "Sticker | M80 (Holo) | Budapest 2025",
-    "prev_price": 5.61,
-    "curr_price": 4.8,
-    "pct_change": -14.44,
-    "volume": 9
+    "market_hash_name": "MP9 | Dizzy (Factory New)",
+    "prev_price": 0.07,
+    "curr_price": 0.5,
+    "pct_change": 614.29,
+    "volume": 13
   },
   {
-    "market_hash_name": "P2000 | Grip Tape (Battle-Scarred)",
-    "prev_price": 0.51,
-    "curr_price": 0.44,
-    "pct_change": -13.73,
+    "market_hash_name": "\u2605 Survival Knife | Case Hardened (Well-Worn)",
+    "prev_price": 102.82,
+    "curr_price": 605.8,
+    "pct_change": 489.18,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Sticker | magixx (Holo, Champion) | Shanghai 2024",
+    "prev_price": 0.37,
+    "curr_price": 1.98,
+    "pct_change": 435.14,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "Souvenir AK-47 | Safari Mesh (Field-Tested)",
+    "prev_price": 44.67,
+    "curr_price": 211.74,
+    "pct_change": 374.01,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "\u2605 Butterfly Knife | Gamma Doppler (Factory New)",
+    "prev_price": 2314.03,
+    "curr_price": 10320.87,
+    "pct_change": 346.01,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "\u2605 Bayonet | Gamma Doppler (Factory New)",
+    "prev_price": 496.48,
+    "curr_price": 1985.03,
+    "pct_change": 299.82,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "StatTrak\u2122 AK-47 | The Outsiders (Factory New)",
+    "prev_price": 124.36,
+    "curr_price": 458.2,
+    "pct_change": 268.45,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Souvenir Galil AR | Cerberus (Field-Tested)",
+    "prev_price": 96.95,
+    "curr_price": 325.43,
+    "pct_change": 235.67,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Souvenir P250 | Nuclear Threat (Field-Tested)",
+    "prev_price": 103.27,
+    "curr_price": 328.31,
+    "pct_change": 217.91,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "Souvenir XM1014 | Blue Steel (Field-Tested)",
+    "prev_price": 55.9,
+    "curr_price": 175.4,
+    "pct_change": 213.77,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "Sticker | EmiliaQAQ (Gold) | Copenhagen 2024",
+    "prev_price": 8.41,
+    "curr_price": 25.26,
+    "pct_change": 200.36,
     "volume": 3
   },
   {
-    "market_hash_name": "Sticker | zont1x (Holo) | Budapest 2025",
-    "prev_price": 0.67,
-    "curr_price": 0.58,
-    "pct_change": -13.43,
+    "market_hash_name": "Souvenir MP5-SD | Dirt Drop (Battle-Scarred)",
+    "prev_price": 0.04,
+    "curr_price": 0.12,
+    "pct_change": 200.0,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Souvenir P90 | Wash me (Battle-Scarred)",
+    "prev_price": 0.04,
+    "curr_price": 0.12,
+    "pct_change": 200.0,
+    "volume": 2
+  },
+  {
+    "market_hash_name": "Desert Eagle | Urban Rubble (Factory New)",
+    "prev_price": 1.61,
+    "curr_price": 4.67,
+    "pct_change": 190.06,
+    "volume": 23
+  },
+  {
+    "market_hash_name": "Sticker | KOI (Gold) | Copenhagen 2024",
+    "prev_price": 4.81,
+    "curr_price": 13.26,
+    "pct_change": 175.68,
     "volume": 1
-  },
-  {
-    "market_hash_name": "MP7 | Amberline (Battle-Scarred)",
-    "prev_price": 2.89,
-    "curr_price": 2.51,
-    "pct_change": -13.15,
-    "volume": 1
-  },
-  {
-    "market_hash_name": "\u2605 Hydra Gloves | Mangrove (Minimal Wear)",
-    "prev_price": 75.94,
-    "curr_price": 66.37,
-    "pct_change": -12.6,
-    "volume": 4
-  },
-  {
-    "market_hash_name": "Sticker | The MongolZ (Holo) | Copenhagen 2024",
-    "prev_price": 5.37,
-    "curr_price": 4.74,
-    "pct_change": -11.73,
-    "volume": 8
-  },
-  {
-    "market_hash_name": "MAC-10 | Calf Skin (Minimal Wear)",
-    "prev_price": 0.18,
-    "curr_price": 0.16,
-    "pct_change": -11.11,
-    "volume": 17
-  },
-  {
-    "market_hash_name": "Souvenir Sawed-Off | Sage Spray (Minimal Wear)",
-    "prev_price": 0.09,
-    "curr_price": 0.08,
-    "pct_change": -11.11,
-    "volume": 4
   }
 ]
