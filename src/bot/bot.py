@@ -81,6 +81,7 @@ def start_bot() -> None:
     app.add_handler(CommandHandler("discover", handlers.discover_command))
     app.add_handler(CommandHandler("predict", handlers.predict_command))
     app.add_handler(CommandHandler("float", handlers.float_command))
+    app.add_handler(CommandHandler("list", handlers.list_command))
 
     # Scheduler — runs collection + alerts on interval
     scheduler = AsyncIOScheduler(timezone="UTC")

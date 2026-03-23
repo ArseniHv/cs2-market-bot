@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "market_hash_name": "AK-47 | Redline (Field-Tested)",
-      "category": "rifle",
-      "float_range": "ft"
-    },
-    {
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
       "category": "rifle",
       "float_range": "ft"
@@ -34,6 +29,11 @@
       "market_hash_name": "Dreams & Nightmares Case",
       "category": "case",
       "float_range": "none"
+    },
+    {
+      "market_hash_name": "AK-47 | Redline (Field-Tested)",
+      "category": "other",
+      "float_range": "ft"
     }
   ]
 }

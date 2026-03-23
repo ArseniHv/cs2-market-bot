@@ -36,6 +36,7 @@ HELP_TEXT = r"""
 /chart ITEM\_NAME — price history chart \(30 days\)
 /track ITEM\_NAME — add item to tracking list
 /untrack ITEM\_NAME — remove item from tracking
+/list — show all tracked items
 
 *Analytics*
 /liquidity ITEM\_NAME — liquidity score with interpretation
@@ -110,6 +111,25 @@ class BotHandlers:
             alerts_enabled=self.alert_manager.alerts_enabled(),
         )
         await self._send(update, msg)
+
+    async def list_command(
+        self, update: Update, context: ContextTypes.DEFAULT_TYPE
+    ) -> None:
+        items = self.item_manager.get_all()
+        if not items:
+            await self._send(
+                update,
+                "No items are currently tracked\\. Use /track to add one\\."
+            )
+            return
+
+        lines = [f"📋 *Tracked Items* \\({len(items)}\\)\n"]
+        for i, item in enumerate(items, 1):
+            name = escape_md(item["market_hash_name"])
+            cat = escape_md(item["category"])
+            lines.append(f"{i}\\. {name} \\_{cat}\\_")
+
+        await self._send(update, "\n".join(lines))
 
     async def track_command(
         self, update: Update, context: ContextTypes.DEFAULT_TYPE
@@ -264,11 +284,63 @@ class BotHandlers:
     async def predict_command(
         self, update: Update, context: ContextTypes.DEFAULT_TYPE
     ) -> None:
-        """Placeholder — implemented in Part 6."""
-        await self._send(
-            update,
-            "⏳ /predict is coming in a future update\\."
+        item_name = self._parse_item_name(context.args)
+        if not item_name:
+            await self._send(update, "Usage: /predict ITEM\\_NAME")
+            return
+
+        await update.message.reply_text(
+            "🤖 Training prediction model\\.\\.\\.",
+            parse_mode="MarkdownV2",
         )
+
+        try:
+            from src.ml.predictor import PricePredictor
+            predictor = PricePredictor(self.db)
+            result = predictor.predict(item_name)
+        except Exception as e:
+            logger.error(f"Predictor crashed: {e}", exc_info=True)
+            await self._send(update, f"❌ Prediction error: {escape_md(str(e))}")
+            return
+
+        if not result["success"]:
+            error = result["error"].replace("\\.", "\\.").replace("—", "\\-")
+            await update.message.reply_text(f"❌ {error}", parse_mode="MarkdownV2")
+            return
+
+        try:
+            forecast_price = result["forecast_price"]
+            low = result["confidence_low"]
+            high = result["confidence_high"]
+            data_points = result["data_points"]
+
+            fp = escape_md(f"${forecast_price:.2f}")
+            fl = escape_md(f"${low:.2f}")
+            fh = escape_md(f"${high:.2f}")
+            name = escape_md(item_name)
+            dp = escape_md(str(data_points))
+
+            caption = (
+                f"🔮 *{name}*\n"
+                f"Predicted price in 7 days: `{fp}`\n"
+                f"Confidence interval: `{fl}` — `{fh}`\n"
+                f"_Trained on {dp} data points_"
+            )
+
+            if result["chart"]:
+                await update.message.reply_photo(
+                    photo=result["chart"],
+                    caption=caption,
+                    parse_mode="MarkdownV2",
+                )
+            else:
+                await self._send(update, caption)
+
+        except Exception as e:
+            logger.error(f"Failed to send prediction result: {e}", exc_info=True)
+            await update.message.reply_text(
+                f"Prediction complete but failed to format response: {str(e)}"
+            )
 
     async def float_command(
         self, update: Update, context: ContextTypes.DEFAULT_TYPE
@@ -292,7 +364,6 @@ class BotHandlers:
         listings = client.fetch_listings(item_name)
         grouped = client.group_by_float_range(listings)
 
-        # Store float-range data in InfluxDB for trend tracking
         for tier, data in grouped.items():
             try:
                 self.db.write_float_range_price(
@@ -307,7 +378,6 @@ class BotHandlers:
             except Exception as e:
                 logger.warning(f"Could not write float data to InfluxDB: {e}")
 
-        # Get historical averages for best-value comparison
         historical_avgs = self.db.get_float_range_historical_avgs(item_name)
         best_tier = client.find_best_value_range(grouped, historical_avgs)
 

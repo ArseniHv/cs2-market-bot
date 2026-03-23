@@ -17,6 +17,25 @@ services:
       - DOCKER_INFLUXDB_INIT_BUCKET=cs2_market
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-token-change-this
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "influx", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  bot:
+    build: .
+    container_name: cs2_bot
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
 
 volumes:
   influxdb-data:

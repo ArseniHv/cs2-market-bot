@@ -1,128 +1,142 @@
 [
   {
-    "market_hash_name": "\u2605 StatTrak\u2122 Gut Knife | Doppler (Factory New)",
-    "prev_price": 428.98,
-    "curr_price": 813.17,
-    "pct_change": 89.56,
+    "market_hash_name": "Charm | Lil' Bloody",
+    "prev_price": 1.43,
+    "curr_price": 4.18,
+    "pct_change": 192.31,
+    "volume": 28
+  },
+  {
+    "market_hash_name": "\u2605 Stiletto Knife | Doppler (Minimal Wear)",
+    "prev_price": 1050.33,
+    "curr_price": 3028.72,
+    "pct_change": 188.36,
     "volume": 0
   },
   {
-    "market_hash_name": "\u2605 StatTrak\u2122 Falchion Knife | Doppler (Factory New)",
-    "prev_price": 671.94,
-    "curr_price": 1102.04,
-    "pct_change": 64.01,
-    "volume": 0
+    "market_hash_name": "Galil AR | Kami (Factory New)",
+    "prev_price": 29.15,
+    "curr_price": 14.42,
+    "pct_change": -50.53,
+    "volume": 13
   },
   {
-    "market_hash_name": "Souvenir M4A1-S | Mud-Spec (Factory New)",
-    "prev_price": 80.28,
-    "curr_price": 45.99,
-    "pct_change": -42.71,
+    "market_hash_name": "Charm | Dead Weight",
+    "prev_price": 0.55,
+    "curr_price": 0.74,
+    "pct_change": 34.55,
+    "volume": 116
+  },
+  {
+    "market_hash_name": "Desert Eagle | The Daily Deagle (Field-Tested)",
+    "prev_price": 2.61,
+    "curr_price": 1.89,
+    "pct_change": -27.59,
+    "volume": 28
+  },
+  {
+    "market_hash_name": "Sticker | Winstrike Team | London 2018",
+    "prev_price": 2.03,
+    "curr_price": 1.54,
+    "pct_change": -24.14,
+    "volume": 4
+  },
+  {
+    "market_hash_name": "\u2605 StatTrak\u2122 Bayonet | Damascus Steel (Minimal Wear)",
+    "prev_price": 408.92,
+    "curr_price": 316.68,
+    "pct_change": -22.56,
     "volume": 2
   },
   {
-    "market_hash_name": "Dual Berettas | Angel Eyes (Factory New)",
-    "prev_price": 35.05,
-    "curr_price": 21.51,
-    "pct_change": -38.63,
+    "market_hash_name": "G3SG1 | Polar Camo (Minimal Wear)",
+    "prev_price": 0.05,
+    "curr_price": 0.04,
+    "pct_change": -20.0,
+    "volume": 11
+  },
+  {
+    "market_hash_name": "Dual Berettas | Cobalt Quartz (Factory New)",
+    "prev_price": 0.83,
+    "curr_price": 0.98,
+    "pct_change": 18.07,
+    "volume": 60
+  },
+  {
+    "market_hash_name": "P2000 | Ivory (Minimal Wear)",
+    "prev_price": 0.89,
+    "curr_price": 1.05,
+    "pct_change": 17.98,
     "volume": 6
   },
   {
-    "market_hash_name": "AK-47 | Crane Flight (Factory New)",
-    "prev_price": 454.92,
-    "curr_price": 344.3,
-    "pct_change": -24.32,
-    "volume": 4
-  },
-  {
-    "market_hash_name": "Souvenir MAC-10 | Urban DDPAT (Factory New)",
-    "prev_price": 14.75,
-    "curr_price": 11.3,
-    "pct_change": -23.39,
+    "market_hash_name": "Sticker | Gambit Esports (Foil) | Boston 2018",
+    "prev_price": 21.67,
+    "curr_price": 18.42,
+    "pct_change": -15.0,
     "volume": 1
   },
   {
-    "market_hash_name": "PP-Bizon | RMX (Minimal Wear)",
-    "prev_price": 1.95,
-    "curr_price": 1.5,
-    "pct_change": -23.08,
+    "market_hash_name": "P250 | Red Rock (Battle-Scarred)",
+    "prev_price": 25.69,
+    "curr_price": 21.84,
+    "pct_change": -14.99,
     "volume": 1
   },
   {
-    "market_hash_name": "Sticker | Staehr (Holo) | Budapest 2025",
-    "prev_price": 0.53,
-    "curr_price": 0.41,
-    "pct_change": -22.64,
-    "volume": 1
+    "market_hash_name": "Sticker | M80 (Holo) | Budapest 2025",
+    "prev_price": 5.61,
+    "curr_price": 4.8,
+    "pct_change": -14.44,
+    "volume": 9
   },
   {
-    "market_hash_name": "Sticker | MIBR (Holo) | Austin 2025",
-    "prev_price": 8.9,
-    "curr_price": 7.01,
-    "pct_change": -21.24,
-    "volume": 5
-  },
-  {
-    "market_hash_name": "AK-47 | Case Hardened (Well-Worn)",
-    "prev_price": 208.94,
-    "curr_price": 241.76,
-    "pct_change": 15.71,
-    "volume": 10
-  },
-  {
-    "market_hash_name": "StatTrak\u2122 M4A1-S | Electrum (Minimal Wear)",
-    "prev_price": 31.15,
-    "curr_price": 36.01,
-    "pct_change": 15.6,
-    "volume": 2
-  },
-  {
-    "market_hash_name": "Sticker | Fluxo (Gold) | Austin 2025",
-    "prev_price": 1.62,
-    "curr_price": 1.38,
-    "pct_change": -14.81,
-    "volume": 2
-  },
-  {
-    "market_hash_name": "StatTrak\u2122 CZ75-Auto | Red Astor (Factory New)",
-    "prev_price": 9.94,
-    "curr_price": 8.59,
-    "pct_change": -13.58,
+    "market_hash_name": "P2000 | Grip Tape (Battle-Scarred)",
+    "prev_price": 0.51,
+    "curr_price": 0.44,
+    "pct_change": -13.73,
     "volume": 3
   },
   {
-    "market_hash_name": "M4A4 | The Battlestar (Factory New)",
-    "prev_price": 245.35,
-    "curr_price": 271.64,
-    "pct_change": 10.72,
+    "market_hash_name": "Sticker | zont1x (Holo) | Budapest 2025",
+    "prev_price": 0.67,
+    "curr_price": 0.58,
+    "pct_change": -13.43,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "MP7 | Amberline (Battle-Scarred)",
+    "prev_price": 2.89,
+    "curr_price": 2.51,
+    "pct_change": -13.15,
+    "volume": 1
+  },
+  {
+    "market_hash_name": "\u2605 Hydra Gloves | Mangrove (Minimal Wear)",
+    "prev_price": 75.94,
+    "curr_price": 66.37,
+    "pct_change": -12.6,
     "volume": 4
   },
   {
-    "market_hash_name": "P2000 | Space Race (Factory New)",
-    "prev_price": 59.08,
-    "curr_price": 63.1,
-    "pct_change": 6.8,
-    "volume": 12
+    "market_hash_name": "Sticker | The MongolZ (Holo) | Copenhagen 2024",
+    "prev_price": 5.37,
+    "curr_price": 4.74,
+    "pct_change": -11.73,
+    "volume": 8
   },
   {
-    "market_hash_name": "R8 Revolver | Tango (Factory New)",
-    "prev_price": 2.86,
-    "curr_price": 2.69,
-    "pct_change": -5.94,
+    "market_hash_name": "MAC-10 | Calf Skin (Minimal Wear)",
+    "prev_price": 0.18,
+    "curr_price": 0.16,
+    "pct_change": -11.11,
+    "volume": 17
+  },
+  {
+    "market_hash_name": "Souvenir Sawed-Off | Sage Spray (Minimal Wear)",
+    "prev_price": 0.09,
+    "curr_price": 0.08,
+    "pct_change": -11.11,
     "volume": 4
-  },
-  {
-    "market_hash_name": "M4A4 | \u9f8d\u738b (Dragon King) (Factory New)",
-    "prev_price": 113.77,
-    "curr_price": 120.52,
-    "pct_change": 5.93,
-    "volume": 5
-  },
-  {
-    "market_hash_name": "\u2605 Classic Knife | Urban Masked (Field-Tested)",
-    "prev_price": 118.79,
-    "curr_price": 112.16,
-    "pct_change": -5.58,
-    "volume": 2
   }
 ]
