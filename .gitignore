@@ -36,3 +36,8 @@ influxdb-data/
 
 # Prophet/Stan cache
 /tmp/
+
+
+data/last_prices.json
+data/market_movers.json
+data/bot_status.json
